@@ -1,0 +1,233 @@
+
+/* Media query 1200px */
+
+@media screen and (max-width: 1200px) {
+
+    /* HEADER - MENU */
+    .container-header, .otros-estudios {
+        max-width: 960px;
+    }
+
+    .menu nav {
+        margin: 0px 4px;
+    }
+
+    .menu nav ul li {
+        margin: 0px 8px;
+    }
+
+    .menu nav ul li a {
+        font-size: 14px;
+    }
+
+    .socialMedia {
+        margin: 0px 4px;
+    }
+
+    /* PORTADA - COVER */
+
+    .cover {
+        max-width: 960px;
+    }
+
+    .text-cover {
+        padding-right: 20px;
+    }
+    .text-cover h1 {
+        font-size: 40px;
+    }
+
+    .image-cover img {
+        width: 450px;
+    }
+
+    .image-otros-estudios img {
+        width: 400px;
+    }
+}
+
+
+/* Media query 960px */
+
+@media screen and (max-width: 960px) {
+
+    /* HEADER - MENU */
+
+    .bars-menu{
+        display: block;
+    }
+
+    .container-header, .otros-estudios {
+        max-width: 768px;
+    }
+
+    .menu {
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: -420px;
+        padding-top: 100px;
+        padding-right: 60px;
+        padding-left: 60px;
+        background: white;
+        flex-direction: column;
+        box-shadow: 10px 0px 40px -20px rgba(0,0,0,0.2);
+        transition: all 300ms;
+    }
+
+    .menu-active {
+        left: 0;
+    }
+
+    .menu nav {
+        margin-left: -60px;
+    }
+
+    .menu nav ul {
+        flex-direction: column;
+    }
+
+    .menu nav ul li {
+        margin: 8px 0px;
+    }
+
+    .menu nav ul li a {
+        font-size: var(--lowText-font-size);
+    }
+
+    .menu .socialMedia {
+        margin-top: 35px;
+    }
+
+    /* PORTADA - COVER */
+
+    .container-cover {
+        padding: 180px 0px 250px 0px;
+    }
+
+    .cover {
+        max-width: 768px;
+    }
+
+    .text-cover {
+        padding-right: 20px;
+    }
+    .text-cover h1 {
+        font-size: 30px;
+    }
+
+    .text-cover p {
+        font-size: 14px;
+    }
+
+    .btn-text {
+        font-size: 14px;
+    }
+
+    .image-cover img {
+        width: 350px;
+
+    }
+
+    /* DATOS PERSONALES */
+
+    .image-datos-personales {
+        padding-left: 110px;
+    }
+    
+    /* OTROS ESTUDIOS */
+
+    .text-otros-estudios h2 {
+        font-size: 30px;
+    }
+
+    .text-otros-estudios p {
+        font-size: 14px;
+    }
+
+    .image-otros-estudios img {
+        width: 300px;
+    }
+
+    /* FORMULARIO DE CONTACTO */
+
+    .container-contact {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+        background: var(--background-color);
+    }
+
+}
+
+/* Media query 768px */
+
+@media screen and (max-width: 768px) {
+
+    /* HEADER - MENU */
+
+    .logo img {
+        width: 50px;
+    }
+
+    /* PORTADA - COVER */
+
+    .container-cover {
+        padding: auto;
+    }
+
+    .cover {
+        margin-top: 40px;
+        max-width: 600px;
+        flex-direction: column;
+    }
+
+
+    .image-cover img {
+        width: 100%;
+        margin-top: 100px;
+    }
+
+    /* DATOS PERSONALES */
+
+    .box-datos-personales {
+        display: grid;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .image-datos-personales {
+        padding: 0px 0px 20px 0px;
+    }
+
+    /* OTROS ESTUDIOS */
+
+    .otros-estudios {
+        max-width: 480px;
+        flex-direction: column;
+    }
+
+    .text-otros-estudios {
+        width: 100%;
+        padding-right: 0px;
+        display: grid;
+        justify-items: center;
+    }
+
+    .image-otros-estudios {
+        width: 100%;
+        margin-top: 50px;
+        justify-content: center;
+    }
+
+    /* FORMULARIO DE CONTACTO */
+    
+    .name-email, .subject-telephone {
+        flex-direction: column;
+    }
+
+    .form-contact input[type="text"], .form-contact input[type="email"], .form-contact input[type="phone"] {
+        width: 100%;
+    }
+
+}
