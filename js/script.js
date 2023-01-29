@@ -59,14 +59,14 @@ window.addEventListener('scroll', () => {
 // Validación del formulario
 
 const formulario = document.getElementById('formulario');
-const inputs = document.querySelectorAll('input');
+const inputs = document.querySelectorAll('#formulario input');
+const areaText = document.querySelector('#formulario textarea');
 
 const expresiones = {
   nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
   correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9_.+-]+\.[a-zA-Z0-9-.]+$/,
   telefono: /^\d{7,11}$/, // 9 a 11 numeros, sin espacios ni guines.
   asunto: /^[a-zA-ZÀ-ÿ0-9_.+-\s]{4,40}$/, // Letras, numeros, espacios, acentos, guion y guion_bajo.
-  mensaje: /^[a-zA-ZÀ-ÿ0-9_.+-\s]{4,40}$/
 }
 
 const campos = {
@@ -92,7 +92,14 @@ const validarFormulario = (e) => {
       validarCampo(expresiones.asunto, e.target, e.target.name);
     break;
     case "mensaje":
-      validarCampo(expresiones.mensaje, e.target, e.target.name);
+      const fieldValue = e.target.value;
+      if (fieldValue.length < 4) {
+        document.querySelector(`#grupo__mensaje .formulario__input-error`).classList.add('formulario__input-error-activo');
+        campos.mensaje = false;
+      } else {
+        document.querySelector(`#grupo__mensaje .formulario__input-error`).classList.remove('formulario__input-error-activo');
+        campos.mensaje = true;  
+      }
     break;
   }
 }
@@ -113,36 +120,47 @@ const validarCampo = (expresion, input, campo) => {
     document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
     campos[campo] = false;
   }
+  
 }
 
 inputs.forEach((input) => {
-  input.addEventListener('keyup', validarFormulario);
-  input.addEventListener('blur', validarFormulario);
+  input.addEventListener('keyup', validarFormulario); //Se ejecuta cada vez que se levanta la tecla.
+  input.addEventListener('blur', validarFormulario); //Se ejecuta cada vez que se hace click fuera del input.
 });
+
+areaText.addEventListener('keyup', validarFormulario); //Se ejecuta cada vez que se levanta la tecla.
+areaText.addEventListener('blur', validarFormulario); //Se ejecuta cada vez que se hace click fuera del input.
+
+// Animación ventana Popup
+
+let overlay = document.getElementById('overlay'), 
+  popup = document.getElementById('popup'),
+  btnCerrarPopup = document.getElementById('btn-cerrar-popup'),
+  btnCerrar = document.getElementById('btn-cerrar');
+
+btnCerrarPopup.addEventListener('click', function() {
+  overlay.classList.remove('active');
+  popup.classList.remove('active');
+});
+
+btnCerrar.addEventListener('click', function() {
+  overlay.classList.remove('active');
+  popup.classList.remove('active');
+})
+
+// Evento Submit
 
 formulario.addEventListener('submit', (e) => {
   e.preventDefault();
   if (campos.nombre && campos.correo && campos.telefono && campos.asunto && campos.mensaje) {
     formulario.reset();
-    document.getElementById('modal-message-send').classList.add('.modal-message-send.active');
-    document.getElementById('message').classList.add('.message.active');
+    overlay.classList.add('active');
+    popup.classList.add('active');
     document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
-      icono.classList.remove('formulario__grupo-correcto');
+      icono.classList.remove('formulario__grupo-correcto'); 
     });
+    document.getElementById('formulario__mensaje-error').classList.remove('formulario__mensaje-error-activo'); 
   } else {
-    document.getElementById('formulario__mensaje-error').classList.add('formulario__mensaje-errorActivo');  
+    document.getElementById('formulario__mensaje-error').classList.add('formulario__mensaje-error-activo');  
   }
 });
-
-// Animación ventana Popup
-
-let modalMessageSend = document.getElementById('modal-message-send'), 
-  message = document.getElementById('message'),
-  btnCerrarPopup = document.getElementById('btn-cerrar-popup');
-
-btnCerrarPopup.addEventListener('click', function(){
-  modalMessageSend.classList.remove('active');
-  message.classList.remove('active');
-});
-
-

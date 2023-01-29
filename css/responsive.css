@@ -1,7 +1,7 @@
 
-/* Media query 1200px */
+/* Media query 1250px */
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1250px) {
 
     /* HEADER - MENU */
     .container-header, .otros-estudios {
@@ -43,6 +43,12 @@
 
     .image-otros-estudios img {
         width: 400px;
+    }
+
+    /* FOOTER */
+
+    .copyright-footer {
+        margin: 20px 0px;
     }
 }
 
@@ -205,6 +211,7 @@
     .otros-estudios {
         max-width: 480px;
         flex-direction: column;
+        padding: 0;
     }
 
     .text-otros-estudios {
@@ -222,12 +229,20 @@
 
     /* FORMULARIO DE CONTACTO */
     
-    .name-email, .subject-telephone {
-        flex-direction: column;
+    .form-contact .formulario {
+        grid-template-columns: 1fr;
     }
 
-    .form-contact input[type="text"], .form-contact input[type="email"], .form-contact input[type="phone"] {
+    .formulario__mensaje, .formulario__mensaje-error, .formulario__btn {
+        grid-column: 1;
         width: 100%;
     }
 
+    .form-contact input[type="text"], .form-contact input[type="email"], .form-contact input[type="tel"] {
+        width: 100%;
+    }
+
+    .btn-text {
+        width: 100%; 
+    }
 }

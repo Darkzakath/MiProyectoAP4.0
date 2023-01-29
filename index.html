@@ -7,7 +7,6 @@
     <title>Curriculum Vitae</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <script src="https://kit.fontawesome.com/bed66a46d0.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -209,6 +208,8 @@
                     <h2>Contacto</h2>
                 </div>
                 <form action="" class="formulario" id="formulario">
+
+                    <!-- Nombre -->
                     <div class="formulario__grupo" id="grupo__nombre">
                         <div class="formulario__grupo-input">
                             <input type="text" class="furmulario__input" name="nombre" id="nombre" placeholder="Nombre">
@@ -216,6 +217,8 @@
                         </div>
                         <p class="formulario__input-error">El nombre solo puede contener letras, espacios y acentos.</p>
                     </div>
+
+                    <!-- Correo electronico -->
                     <div class="formulario__grupo" id="grupo__correo">
                         <div class="formulario__grupo-input">
                             <input type="email" class="furmulario__input" name="correo" id="correo" placeholder="Correo electrónico">
@@ -223,13 +226,17 @@
                         </div> 
                         <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guion bajo.</p>    
                     </div>
+
+                    <!-- Teléfono -->
                     <div class="formulario__grupo" id="grupo__telefono">
                         <div class="formulario__grupo-input">
-                            <input type="phone" class="furmulario__input" name="telefono" id="telefono" placeholder="Teléfono">
+                            <input type="tel" class="furmulario__input" name="telefono" id="telefono" placeholder="Teléfono">
                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">El telefono solo puede contener números y el maximo son 11 dígitos.</p>
                     </div>
+
+                    <!-- Asunto -->
                     <div class="formulario__grupo" id="grupo__asunto">
                         <div class="formulario__grupo-input">
                             <input type="text" class="furmulario__input" name="asunto" id="asunto" placeholder="Asunto">
@@ -237,26 +244,34 @@
                         </div>
                         <p class="formulario__input-error">El asunto solo puede contener letras, números, espacios, acentos, guion y guion_bajo.</p>    
                     </div>
+
+                    <!-- Mensaje -->
                     <div class="formulario__mensaje" id="grupo__mensaje">
                         <div class="formulario__grupo-input">
                             <textarea class="furmulario__input" name="mensaje" name="mensaje" id="mensaje" placeholder="Mensaje"></textarea>
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
                         </div>
                         <p class="formulario__input-error">El mensaje no puede estar vacío.</p>
                     </div>
+
+                    <!-- Mensaje de error -->
                     <div class="formulario__mensaje-error" id="formulario__mensaje-error">
                         <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
                     </div>
+
+                    <!-- Boton submit -->
                     <div class="formulario__btn">
                         <button type="submit" class="btn-text" id="enviar">Enviar Mensaje</button>
                     </div> 
                 </form>  
             </div>
-            <div class="modal-message-send" id="modal-message-send">
-                <div class="message" id="message">
+
+            <!-- Ventana modal -->
+            <div class="overlay" id="overlay">
+                <div class="popup" id="popup">
+                    <a href="#contacto" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
                     <h2>Su mensaje ha sido enviado correctamente</h2>
                     <p>Me pondre en contacto con usted lo antes posible. Muchas gracias por su mensaje.</p>
-                    <input type="button" class="btn-cerrar-popup" id="btn-cerrar-popup" value="Aceptar"></input>
+                    <input type="button" class="btn-cerrar" id="btn-cerrar" value="Aceptar"></input>
                 </div>
             </div>
         </div>
@@ -285,6 +300,7 @@
     </footer> 
     
     <script src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/bed66a46d0.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
