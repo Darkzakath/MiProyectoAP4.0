@@ -160,6 +160,11 @@ formulario.addEventListener('submit', (e) => {
       icono.classList.remove('formulario__grupo-correcto'); 
     });
     document.getElementById('formulario__mensaje-error').classList.remove('formulario__mensaje-error-activo'); 
+    campos.nombre = false;
+    campos.correo = false;
+    campos.telefono = false;
+    campos.asunto = false;
+    campos.mensaje = false;
   } else {
     document.getElementById('formulario__mensaje-error').classList.add('formulario__mensaje-error-activo');  
   }
