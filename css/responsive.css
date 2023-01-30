@@ -143,6 +143,10 @@
     
     /* OTROS ESTUDIOS */
 
+    .container-otros-estudios {
+       margin: 100px 25px; 
+    }
+
     .text-otros-estudios h2 {
         font-size: 30px;
     }
@@ -155,13 +159,18 @@
         width: 300px;
     }
 
+    /* EXPERIENCIA LABORAL */
+
+    .container-contact {
+        padding-top: 125px;
+    }
+
     /* FORMULARIO DE CONTACTO */
 
     .container-contact {
         flex-direction: column;
         align-items: center;
         margin-top: 100px;
-        background: var(--background-color);
     }
 
 }
@@ -188,6 +197,9 @@
         flex-direction: column;
     }
 
+    .text-cover {
+        padding: 0;
+    }
 
     .image-cover img {
         width: 100%;
@@ -216,14 +228,24 @@
 
     .text-otros-estudios {
         width: 100%;
+        margin: 20px 0px;
         padding-right: 0px;
         display: grid;
         justify-items: center;
     }
 
+    .text-otros-estudios p {
+        margin: 20px;
+        text-align: center;
+    }
+    
+    .btn-text-otros-estudios {
+        margin-top: 20px;
+    }
+
     .image-otros-estudios {
         width: 100%;
-        margin-top: 50px;
+        margin-top: 20px;
         justify-content: center;
     }
 
@@ -244,5 +266,29 @@
 
     .btn-text {
         width: 100%; 
+    }  
+}
+
+/* Media query 600px */
+
+@media screen and (max-width: 600px) {
+
+    /* POPUP */
+
+    .popup {
+        width: 85%;
+    }
+
+    /* FOOTER */
+    .copyright-footer p {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .copyright-footer .socialMedia {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
     }
 }
